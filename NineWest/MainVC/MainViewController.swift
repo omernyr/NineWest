@@ -12,7 +12,13 @@ class MainViewController: UIViewController {
     @IBOutlet var viewForTapBar: UIView!
     @IBOutlet var contentView: UIView!
     
+    @IBOutlet var button1: UIButton!
+    @IBOutlet var button2: UIButton!
+    @IBOutlet var button3: UIButton!
+    @IBOutlet var button4: UIButton!
+    @IBOutlet var button5: UIButton!
     
+    var lastButton: UIButton?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +39,57 @@ class MainViewController: UIViewController {
     
     @IBAction func onClickTapBar(_ sender: UIButton) {
         
+        lastButton?.tintColor = .secondaryLabel
+        
         let tag = sender.tag
         
+        switch tag {
+            case 1:
+                button1.tintColor = UIColor.black
+            case 2:
+                button2.tintColor = UIColor.black
+            case 3:
+                button3.tintColor = UIColor.black
+            case 4:
+                button4.tintColor = UIColor.black
+            case 5:
+                button5.tintColor = UIColor.black
+            default:
+                break
+            }
+        
+        lastButton = sender
+        
         if tag == 1 {
+            
             guard let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
             contentView.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
         } else if tag == 2 {
+            
             guard let vc = self.storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else { return }
             contentView.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
         } else if tag == 3 {
+            
             guard let vc = self.storyboard?.instantiateViewController(identifier: "BasketViewController") as? BasketViewController else { return }
             contentView.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
         } else if tag == 4 {
+            
             guard let vc = self.storyboard?.instantiateViewController(identifier: "PersonViewController") as? PersonViewController else { return }
             contentView.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
         } else if tag == 5 {
+            
             guard let vc = self.storyboard?.instantiateViewController(identifier: "NotificationViewController") as? NotificationViewController else { return }
             contentView.addSubview(vc.view)
             vc.didMove(toParent: self)
+            
         }
     }
     
