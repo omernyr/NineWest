@@ -18,6 +18,9 @@
 		52CD526929FBF62400C79D5F /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD526829FBF62400C79D5F /* BasketViewController.swift */; };
 		52CD526B29FBF63200C79D5F /* PersonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD526A29FBF63200C79D5F /* PersonViewController.swift */; };
 		52CD526D29FBF63C00C79D5F /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD526C29FBF63C00C79D5F /* NotificationViewController.swift */; };
+		52CD526F29FC12F200C79D5F /* HomeVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD526E29FC12F100C79D5F /* HomeVC+CollectionView.swift */; };
+		52CE34DD2A1A291500EFE42E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52CE34DC2A1A291500EFE42E /* SnapKit */; };
+		52CE34E02A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34DF2A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +37,8 @@
 		52CD526829FBF62400C79D5F /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
 		52CD526A29FBF63200C79D5F /* PersonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonViewController.swift; sourceTree = "<group>"; };
 		52CD526C29FBF63C00C79D5F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		52CD526E29FC12F100C79D5F /* HomeVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+CollectionView.swift"; sourceTree = "<group>"; };
+		52CE34DF2A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +46,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				52CE34DD2A1A291500EFE42E /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -93,7 +99,9 @@
 		52CD525F29FBF5E600C79D5F /* HomeVC */ = {
 			isa = PBXGroup;
 			children = (
+				52CE34DE2A1A2C3C00EFE42E /* CategoryCell */,
 				52CD526429FBF61300C79D5F /* HomeViewController.swift */,
+				52CD526E29FC12F100C79D5F /* HomeVC+CollectionView.swift */,
 			);
 			path = HomeVC;
 			sourceTree = "<group>";
@@ -130,6 +138,14 @@
 			path = NotificationVC;
 			sourceTree = "<group>";
 		};
+		52CE34DE2A1A2C3C00EFE42E /* CategoryCell */ = {
+			isa = PBXGroup;
+			children = (
+				52CE34DF2A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift */,
+			);
+			path = CategoryCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -146,6 +162,9 @@
 			dependencies = (
 			);
 			name = NineWest;
+			packageProductDependencies = (
+				52CE34DC2A1A291500EFE42E /* SnapKit */,
+			);
 			productName = NineWest;
 			productReference = 5269E8E429FACCC0001D92B4 /* NineWest.app */;
 			productType = "com.apple.product-type.application";
@@ -174,6 +193,9 @@
 				Base,
 			);
 			mainGroup = 5269E8DB29FACCC0001D92B4;
+			packageReferences = (
+				52CE34DB2A1A291500EFE42E /* XCRemoteSwiftPackageReference "SnapKit" */,
+			);
 			productRefGroup = 5269E8E529FACCC0001D92B4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -206,6 +228,8 @@
 				52CD526D29FBF63C00C79D5F /* NotificationViewController.swift in Sources */,
 				5269E8EC29FACCC0001D92B4 /* MainViewController.swift in Sources */,
 				5269E8E829FACCC0001D92B4 /* AppDelegate.swift in Sources */,
+				52CD526F29FC12F200C79D5F /* HomeVC+CollectionView.swift in Sources */,
+				52CE34E02A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift in Sources */,
 				5269E8EA29FACCC0001D92B4 /* SceneDelegate.swift in Sources */,
 				52CD526529FBF61300C79D5F /* HomeViewController.swift in Sources */,
 				52CD526B29FBF63200C79D5F /* PersonViewController.swift in Sources */,
@@ -426,6 +450,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		52CE34DB2A1A291500EFE42E /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		52CE34DC2A1A291500EFE42E /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 52CE34DB2A1A291500EFE42E /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 5269E8DC29FACCC0001D92B4 /* Project object */;
 }
