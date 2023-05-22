@@ -62,28 +62,29 @@ class MainViewController: UIViewController {
         case 1:
             button1.tintColor = UIColor.black
             forHome()
-//            guard let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
-//            contentView.addSubview(vc.view)
-//            vc.didMove(toParent: self)
         case 2:
             button2.tintColor = UIColor.black
             guard let vc = self.storyboard?.instantiateViewController(identifier: "SearchViewController") as? SearchViewController else { return }
             contentView.addSubview(vc.view)
+            addChild(vc)
             vc.didMove(toParent: self)
         case 3:
             button3.tintColor = UIColor.black
             guard let vc = self.storyboard?.instantiateViewController(identifier: "BasketViewController") as? BasketViewController else { return }
             contentView.addSubview(vc.view)
+            addChild(vc)
             vc.didMove(toParent: self)
         case 4:
             button4.tintColor = UIColor.black
             guard let vc = self.storyboard?.instantiateViewController(identifier: "PersonViewController") as? PersonViewController else { return }
             contentView.addSubview(vc.view)
+            addChild(vc)
             vc.didMove(toParent: self)
         case 5:
             button5.tintColor = UIColor.black
             guard let vc = self.storyboard?.instantiateViewController(identifier: "NotificationViewController") as? NotificationViewController else { return }
             contentView.addSubview(vc.view)
+            addChild(vc)
             vc.didMove(toParent: self)
         default:
             break
