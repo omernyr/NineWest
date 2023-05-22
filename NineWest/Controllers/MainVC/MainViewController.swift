@@ -47,6 +47,9 @@ class MainViewController: UIViewController {
     func designableTapBar() {
         viewForTapBar.clipsToBounds = true
         viewForTapBar.layer.cornerRadius = 10.0
+        
+        viewForTapBar.layer.borderWidth = 1.0
+        viewForTapBar.layer.borderColor = UIColor.black.cgColor
     }
     
     @IBAction func onClickTapBar(_ sender: UIButton) {
