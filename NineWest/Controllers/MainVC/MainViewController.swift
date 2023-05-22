@@ -33,9 +33,9 @@ class MainViewController: UIViewController {
     }
     
     func forHome() {
-        
         guard let vc = self.storyboard?.instantiateViewController(identifier: "HomeViewController") as? HomeViewController else { return }
         contentView.addSubview(vc.view)
+        addChild(vc)
         vc.didMove(toParent: self)
     }
     

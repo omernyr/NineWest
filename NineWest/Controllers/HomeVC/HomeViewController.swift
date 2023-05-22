@@ -17,20 +17,24 @@ class HomeViewController: UIViewController {
        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
+        
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
+        
         var collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        // Görünürlük ve etkileşim ayarları
-        collectionView.backgroundColor = UIColor.white
+        collectionView.backgroundColor = UIColor.clear
         collectionView.register(CustomCollectionViewCell.self, forCellWithReuseIdentifier: CustomCollectionViewCell.identifier)
         return collectionView
     }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         setupUI()
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        categoryCollectionView.collectionViewLayout.invalidateLayout()
     }
     
     func setupUI() {
@@ -47,8 +51,11 @@ class HomeViewController: UIViewController {
     func configureConstraints() {
         categoryCollectionView.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(20)
-            make.width.equalToSuperview().inset(20)
+//            make.width.equalToSuperview().inset(20)
+            make.right.equalToSuperview()
+            make.left.equalToSuperview()
             make.height.equalTo(50.0)
         }
     }
+    
 }
