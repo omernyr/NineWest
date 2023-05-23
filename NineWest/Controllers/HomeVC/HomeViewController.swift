@@ -9,9 +9,9 @@ import UIKit
 import SnapKit
 
 class HomeViewController: UIViewController {
-
+// "⚙︎" "✺"
     // Variables
-    public let data = ["Yeni ", "Ayakkabı ", "Sneaker ", "item 4", "item 5", "item 6", "lalo", "babo", "kako", "cono"]
+    public let data = ["Yeni", "Ayakkabı", "Sneaker", "Topuklular", "Sandalet", "Terlik", "Çanta"]
     
     public let categoryCollectionView: UICollectionView = {
        
@@ -29,6 +29,16 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        APICaller.getAllProducts { result in
+//            switch result {
+//            case .success(let success):
+//                
+//            case .failure(let failure):
+//                print(failure)
+//            }
+        }
+        
         setupUI()
     }
     

@@ -21,9 +21,11 @@
 		52CD526F29FC12F200C79D5F /* HomeVC+CollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CD526E29FC12F100C79D5F /* HomeVC+CollectionView.swift */; };
 		52CE34DD2A1A291500EFE42E /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 52CE34DC2A1A291500EFE42E /* SnapKit */; };
 		52CE34E02A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34DF2A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift */; };
-		52CE34E52A1A598E00EFE42E /* ShoesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34E42A1A598E00EFE42E /* ShoesModel.swift */; };
+		52CE34E52A1A598E00EFE42E /* ProductsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34E42A1A598E00EFE42E /* ProductsModel.swift */; };
 		52CE34E82A1A5B5F00EFE42E /* NetworkConstant.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34E72A1A5B5F00EFE42E /* NetworkConstant.swift */; };
 		52CE34EA2A1A7A3900EFE42E /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34E92A1A7A3900EFE42E /* APICaller.swift */; };
+		52CE34EE2A1C24FC00EFE42E /* ProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52CE34ED2A1C24FC00EFE42E /* ProductsViewController.swift */; };
+		52D981EB2A1D007400F563C1 /* CategoriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D981EA2A1D007400F563C1 /* CategoriesModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,9 +44,11 @@
 		52CD526C29FBF63C00C79D5F /* NotificationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
 		52CD526E29FC12F100C79D5F /* HomeVC+CollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeVC+CollectionView.swift"; sourceTree = "<group>"; };
 		52CE34DF2A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		52CE34E42A1A598E00EFE42E /* ShoesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoesModel.swift; sourceTree = "<group>"; };
+		52CE34E42A1A598E00EFE42E /* ProductsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsModel.swift; sourceTree = "<group>"; };
 		52CE34E72A1A5B5F00EFE42E /* NetworkConstant.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConstant.swift; sourceTree = "<group>"; };
 		52CE34E92A1A7A3900EFE42E /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
+		52CE34ED2A1C24FC00EFE42E /* ProductsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsViewController.swift; sourceTree = "<group>"; };
+		52D981EA2A1D007400F563C1 /* CategoriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoriesModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,6 +82,7 @@
 		5269E8E629FACCC0001D92B4 /* NineWest */ = {
 			isa = PBXGroup;
 			children = (
+				52CE34EB2A1C248D00EFE42E /* Details */,
 				52CE34E62A1A5B4700EFE42E /* NetworkConstant */,
 				52CE34E32A1A598200EFE42E /* Model */,
 				52CE34E12A1A556400EFE42E /* Controllers */,
@@ -165,7 +170,8 @@
 		52CE34E32A1A598200EFE42E /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				52CE34E42A1A598E00EFE42E /* ShoesModel.swift */,
+				52CE34E42A1A598E00EFE42E /* ProductsModel.swift */,
+				52D981EA2A1D007400F563C1 /* CategoriesModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +183,22 @@
 				52CE34E92A1A7A3900EFE42E /* APICaller.swift */,
 			);
 			path = NetworkConstant;
+			sourceTree = "<group>";
+		};
+		52CE34EB2A1C248D00EFE42E /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				52CE34EC2A1C24C000EFE42E /* ProductsVC */,
+			);
+			path = Details;
+			sourceTree = "<group>";
+		};
+		52CE34EC2A1C24C000EFE42E /* ProductsVC */ = {
+			isa = PBXGroup;
+			children = (
+				52CE34ED2A1C24FC00EFE42E /* ProductsViewController.swift */,
+			);
+			path = ProductsVC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +280,7 @@
 			files = (
 				52CD526929FBF62400C79D5F /* BasketViewController.swift in Sources */,
 				52CD526729FBF61E00C79D5F /* SearchViewController.swift in Sources */,
+				52CE34EE2A1C24FC00EFE42E /* ProductsViewController.swift in Sources */,
 				52CE34EA2A1A7A3900EFE42E /* APICaller.swift in Sources */,
 				52CD526D29FBF63C00C79D5F /* NotificationViewController.swift in Sources */,
 				5269E8EC29FACCC0001D92B4 /* MainViewController.swift in Sources */,
@@ -266,7 +289,8 @@
 				52CD526F29FC12F200C79D5F /* HomeVC+CollectionView.swift in Sources */,
 				52CE34E02A1A2C4F00EFE42E /* CategoryCollectionViewCell.swift in Sources */,
 				5269E8EA29FACCC0001D92B4 /* SceneDelegate.swift in Sources */,
-				52CE34E52A1A598E00EFE42E /* ShoesModel.swift in Sources */,
+				52D981EB2A1D007400F563C1 /* CategoriesModel.swift in Sources */,
+				52CE34E52A1A598E00EFE42E /* ProductsModel.swift in Sources */,
 				52CD526529FBF61300C79D5F /* HomeViewController.swift in Sources */,
 				52CD526B29FBF63200C79D5F /* PersonViewController.swift in Sources */,
 			);

@@ -23,6 +23,12 @@ struct NetworkConstant {
         }
     }
     
+    public var getAllCategories: String {
+        get {
+            return "categories"
+        }
+    }
+    
     
     
 }

@@ -22,11 +22,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "lalo"
-        self.view.backgroundColor = .cyan
-        
         setupUI()
-        
         DispatchQueue.main.async {
             self.forHome()
         }
@@ -40,6 +36,7 @@ class MainViewController: UIViewController {
     }
     
     func setupUI() {
+        self.view.backgroundColor = .cyan
         self.title = "lalo"
         designableTapBar()
     }
