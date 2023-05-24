@@ -8,12 +8,19 @@
 import UIKit
 import SnapKit
 
+enum CategoryNames {
+    case xx
+    case yy
+}
+
 class SearchViewController: UIViewController {
     
     public var categoryNames: [ProdCategory] = []
+    public var filteredProducts: Products = []
     
     private let categoryTableView: UITableView = {
         let tableView = UITableView()
+        tableView.separatorStyle = .none
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         return tableView
     }()
@@ -67,24 +74,15 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
         guard let categoryItemName = categoryNames[indexPath.row].name else { return UITableViewCell() }
         cell.textLabel?.text = "\(categoryItemName)"
         cell.accessoryType = .disclosureIndicator
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        let categories = categoryNames[indexPath.row].name
+        
+        
+        
     }
 }
-
-// MARK: Filtered func
-//                let filteredItems = success.filter { item in
-//
-//                    if let firstCharacter = item.title?.first {
-//                        return firstCharacter == "H"
-//                    }
-//
-//                    return false
-//                }
-//
-//                for item in filteredItems {
-//                    print(item.title)
-//                }
