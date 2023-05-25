@@ -11,7 +11,7 @@ import SnapKit
 class HomeViewController: UIViewController {
     
     // ViewModel
-    var viewModel: CategoryCollectionViewModel!
+    var viewModel: CategoryCollectionViewModel = CategoryCollectionViewModel()
     
     public let categoryCollectionView: UICollectionView = {
        

@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     public var categoryNames: [ProdCategory] = []
     public var filteredProducts: Products = []
     
+    var viewModel: CategoryTableViewModel = CategoryTableViewModel()
+    
     private let categoryTableView: UITableView = {
         let tableView = UITableView()
         tableView.separatorStyle = .none
@@ -47,26 +49,17 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func fetchCategoryNames() {
         
-        APICaller.getAllCategorys { result in
-            switch result {
-            case .success(let success):
-                DispatchQueue.main.async {
-                    self.categoryNames = success
-                    self.categoryTableView.reloadData()
-                }
-            case .failure(let failure):
-                print(failure)
-            }
-        }
+        viewModel.getData(categoryTableView)
+        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        categoryNames.count
+        viewModel.categoryNames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let categoryItemName = categoryNames[indexPath.row].name else { return UITableViewCell() }
+        guard let categoryItemName = viewModel.categoryNames[indexPath.row].name else { return UITableViewCell() }
         cell.textLabel?.text = "\(categoryItemName)"
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
@@ -75,7 +68,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let categoryName = categoryNames[indexPath.row].name else { return }
+        guard let categoryName = viewModel.categoryNames[indexPath.row].name else { return }
         
         
     }
