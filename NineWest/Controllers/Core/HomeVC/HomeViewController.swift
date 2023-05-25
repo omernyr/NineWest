@@ -17,7 +17,6 @@ class HomeViewController: UIViewController {
        
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
         layout.minimumLineSpacing = 5
         layout.minimumInteritemSpacing = 5
         

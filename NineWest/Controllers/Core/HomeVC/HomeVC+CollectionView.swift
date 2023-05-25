@@ -27,7 +27,6 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
     // MARK: - CollectionViewFlowLayout delegate methods
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        
         return CGSize(width: (collectionView.frame.width - 210) / 2, height: 30)
     }
     
