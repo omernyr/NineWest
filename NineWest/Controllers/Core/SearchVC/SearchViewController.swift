@@ -8,11 +8,6 @@
 import UIKit
 import SnapKit
 
-enum CategoryNames {
-    case xx
-    case yy
-}
-
 class SearchViewController: UIViewController {
     
     public var categoryNames: [ProdCategory] = []
@@ -80,9 +75,9 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        let categories = categoryNames[indexPath.row].name
-        
+        guard let categoryName = categoryNames[indexPath.row].name else { return }
         
         
     }
 }
+
