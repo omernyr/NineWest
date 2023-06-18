@@ -58,4 +58,26 @@ public class APICaller {
             
         }.resume()
     }
+    
+    static func getDataByCategorys( _ categoryName: String, completion: @escaping (_ result: Result<Products, NetworkError>) -> Void) {
+    
+        let urlString = NetworkConstant.shared.serverAddress + NetworkConstant.shared.getProdInCategories + "/\(categoryName)"
+        guard let url = URL(string: urlString) else { return }
+        let request = URLRequest(url: url)
+        
+        URLSession.shared.dataTask(with: request) { data, _, err in
+            
+            guard let data = data, err == nil else { completion(.failure(.categoryURLError)); return }
+            
+            do {
+                let results = try JSONDecoder().decode(Products.self, from: data)
+                completion(.success(results))
+            } catch {
+                completion(.failure(.categoryCanNotParseData))
+            }
+            
+        }.resume()
+    }
+    
+    
 }
