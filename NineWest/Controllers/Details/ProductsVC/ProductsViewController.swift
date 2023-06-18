@@ -10,7 +10,11 @@ import SnapKit
 
 class ProductsViewController: UIViewController {
 
-    let forHFilteredItems: [Product] = []
+    var viewModel: CategoryTableViewModel = CategoryTableViewModel()
+    var forHFilteredItems: Products = []
+    
+    var selectedCategory: String = ""
+    
     private let prodsTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
@@ -24,6 +28,7 @@ class ProductsViewController: UIViewController {
     
     private func setupUI() {
         self.title = "Products"
+        fetchData()
         view.backgroundColor = .darkGray
         prodsTableView.dataSource = self
         prodsTableView.delegate = self
@@ -37,18 +42,27 @@ class ProductsViewController: UIViewController {
             make.height.equalToSuperview()
         }
     }
-
+    
 }
 
 extension ProductsViewController: UITableViewDelegate, UITableViewDataSource {
     
+    func fetchData() {
+        
+        if let selectedCategory = selectedCategory.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) {
+            viewModel.fetchAllProducts("\(selectedCategory)", prodsTableView, nil)
+        }
+        
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        3
+        viewModel.filteredProducts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "test"
+//        cell.textLabel?.text = self.forHFilteredItems[indexPath.row].title ?? "test"
+        cell.textLabel?.text = viewModel.filteredProducts[indexPath.row].title ?? "test"
         return cell
     }
 }

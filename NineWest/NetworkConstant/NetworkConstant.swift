@@ -13,10 +13,10 @@ struct NetworkConstant {
     
     public var serverAddress: String {
         get {
-            return "https://api.escuelajs.co/api/v1/"
+            return "https://fakestoreapi.com/"
         }
     }
-    
+
     public var getAllProducts: String {
         get {
             return "products"
@@ -25,7 +25,13 @@ struct NetworkConstant {
     
     public var getAllCategories: String {
         get {
-            return "categories"
+            return "products/categories"
+        }
+    }
+    
+    public var getProdInCategories: String {
+        get {
+            return "products/category"
         }
     }
     

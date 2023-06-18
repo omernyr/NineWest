@@ -23,40 +23,33 @@ import Foundation
 struct Product: Codable {
     let id: Int?
     let title: String?
-    let price: Int?
+    let price: Double?
     let description: String?
-    let images: [String]?
-    let creationAt: String?
-    let updatedAt: String?
-    let category: Category?
+    let category: String?
+    let image: String?
+    let rating: Rating?
 
     enum CodingKeys: String, CodingKey {
         case id = "id"
         case title = "title"
         case price = "price"
         case description = "description"
-        case images = "images"
-        case creationAt = "creationAt"
-        case updatedAt = "updatedAt"
         case category = "category"
+        case image = "image"
+        case rating = "rating"
     }
 }
 
-// MARK: - Category
-struct Category: Codable {
-    let id: Int?
-    let name: String?
-    let image: String?
-    let creationAt: String?
-    let updatedAt: String?
+// MARK: - Rating
+struct Rating: Codable {
+    let rate: Double?
+    let count: Int?
 
     enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case image = "image"
-        case creationAt = "creationAt"
-        case updatedAt = "updatedAt"
+        case rate = "rate"
+        case count = "count"
     }
 }
 
 typealias Products = [Product]
+

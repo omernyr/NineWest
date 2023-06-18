@@ -12,21 +12,4 @@
 
 import Foundation
 
-// MARK: - Category
-struct ProdCategory: Codable {
-    let id: Int?
-    let name: String?
-    let image: String?
-    let creationAt: String?
-    let updatedAt: String?
-
-    enum CodingKeys: String, CodingKey {
-        case id = "id"
-        case name = "name"
-        case image = "image"
-        case creationAt = "creationAt"
-        case updatedAt = "updatedAt"
-    }
-}
-
-typealias Categories = [ProdCategory]
+typealias Categories = [String]

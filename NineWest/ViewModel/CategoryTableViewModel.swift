@@ -10,7 +10,9 @@ import UIKit
 
 class CategoryTableViewModel {
     
-    public var categoryNames: [ProdCategory] = []
+    public var categoryNames: [String] = []
+    
+    public var filteredProducts: Products = []
     
     func getData(_ myTableView: UITableView ) {
         
@@ -18,8 +20,27 @@ class CategoryTableViewModel {
             switch result {
             case .success(let success):
                 DispatchQueue.main.async {
+                    
                     self.categoryNames = success
                     myTableView.reloadData()
+                    
+                }
+            case .failure(let failure):
+                print(failure)
+            }
+        }
+    }
+    
+    func fetchAllProducts( _ categoryName: String, _ myTableView: UITableView, _ index: Int?) {
+        
+        APICaller.getDataByCategorys(categoryName) { result in
+            switch result {
+            case .success(let success):
+                DispatchQueue.main.async {
+                    
+                    self.filteredProducts = success
+                    myTableView.reloadData()
+                    
                 }
             case .failure(let failure):
                 print(failure)

@@ -10,9 +10,6 @@ import SnapKit
 
 class SearchViewController: UIViewController {
     
-    public var categoryNames: [ProdCategory] = []
-    public var filteredProducts: Products = []
-    
     var viewModel: CategoryTableViewModel = CategoryTableViewModel()
     
     private let categoryTableView: UITableView = {
@@ -41,16 +38,13 @@ class SearchViewController: UIViewController {
             make.width.equalToSuperview()
             make.height.equalToSuperview()
         }
-
     }
 }
 
 extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func fetchCategoryNames() {
-        
         viewModel.getData(categoryTableView)
-        
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -59,7 +53,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        guard let categoryItemName = viewModel.categoryNames[indexPath.row].name else { return UITableViewCell() }
+        let categoryItemName = viewModel.categoryNames[indexPath.row]
         cell.textLabel?.text = "\(categoryItemName)"
         cell.accessoryType = .disclosureIndicator
         cell.selectionStyle = .none
@@ -68,9 +62,11 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
-        guard let categoryName = viewModel.categoryNames[indexPath.row].name else { return }
-        
-        
+        //        let products = viewModel.filteredProducts
+        let vc = ProductsViewController()
+        vc.selectedCategory = viewModel.categoryNames[indexPath.row]
+        //        vc.forHFilteredItems = products
+        present(vc, animated: true)
     }
 }
 
