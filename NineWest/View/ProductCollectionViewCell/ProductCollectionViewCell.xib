@@ -11,14 +11,14 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="ProductCollectionViewCell" id="gTV-IL-0wX" customClass="ProductCollectionViewCell" customModule="NineWest" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="206" height="265"/>
+            <rect key="frame" x="0.0" y="0.0" width="206" height="264"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="206" height="265"/>
+                <rect key="frame" x="0.0" y="0.0" width="206" height="264"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mz6-gA-IGR">
-                        <rect key="frame" x="0.0" y="0.0" width="206" height="265"/>
+                        <rect key="frame" x="0.0" y="0.0" width="206" height="264"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Zz1-VU-7Ub">
                                 <rect key="frame" x="20" y="50" width="166" height="110"/>
@@ -30,17 +30,20 @@
                                 <rect key="frame" x="10" y="170" width="176" height="20"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3.4" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBr-V9-lNY" userLabel="rateLabel">
-                                        <rect key="frame" x="0.0" y="0.0" width="30" height="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="20"/>
                                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="6IY-qI-hfJ"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Kargo Bedava" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OfQ-Zg-BL3">
-                                        <rect key="frame" x="36" y="0.0" width="140" height="20"/>
+                                        <rect key="frame" x="46" y="0.0" width="130" height="20"/>
                                         <color key="backgroundColor" systemColor="systemGray6Color"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="140" id="Ei1-mL-DHc"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="UtO-uu-zds"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <nil key="textColor"/>
@@ -85,6 +88,9 @@
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="didTappedFavoriteButton:" destination="gTV-IL-0wX" eventType="touchUpInside" id="2Ve-JF-xtV"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -117,8 +123,15 @@
                 <constraint firstAttribute="trailing" secondItem="Mz6-gA-IGR" secondAttribute="trailing" id="fYr-zn-XJ5"/>
                 <constraint firstItem="Mz6-gA-IGR" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gO3-9d-sTm"/>
             </constraints>
-            <size key="customSize" width="206" height="265"/>
-            <point key="canvasLocation" x="280.91603053435114" y="-26.408450704225352"/>
+            <size key="customSize" width="206" height="264"/>
+            <connections>
+                <outlet property="favoriteButton" destination="shG-De-M02" id="BhL-nf-oPU"/>
+                <outlet property="prodImageView" destination="Zz1-VU-7Ub" id="kxk-AZ-Jg2"/>
+                <outlet property="prodNameLabel" destination="dMR-nK-xsJ" id="qhS-LB-Q1w"/>
+                <outlet property="prodPriceLabel" destination="tuw-8p-abp" id="qna-j9-F0h"/>
+                <outlet property="prodRateLabel" destination="RBr-V9-lNY" id="EuV-8Q-6HD"/>
+            </connections>
+            <point key="canvasLocation" x="205" y="-49"/>
         </collectionViewCell>
     </objects>
     <resources>
