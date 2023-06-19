@@ -31,7 +31,7 @@ class CategoryTableViewModel {
         }
     }
     
-    func fetchAllProducts( _ categoryName: String, _ myTableView: UITableView, _ index: Int?) {
+    func fetchAllProducts( _ categoryName: String, _ myCollectionView: UICollectionView, _ index: Int?) {
         
         APICaller.getDataByCategorys(categoryName) { result in
             switch result {
@@ -39,7 +39,7 @@ class CategoryTableViewModel {
                 DispatchQueue.main.async {
                     
                     self.filteredProducts = success
-                    myTableView.reloadData()
+                    myCollectionView.reloadData()
                     
                 }
             case .failure(let failure):
