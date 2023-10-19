@@ -20,7 +20,7 @@
  
 ## Screenshots
 
-<img width="163" alt="1" src="https://github.com/omernyr/NineWest/assets/89137487/2dbec330-fb13-4ef8-943d-389a1bd8ea99"> <img width="163" alt="1" src="https://github.com/omernyr/NineWest/assets/89137487/9714f4bc-c567-4d72-a9ba-58174c22ee7d"> 
+<img width="163" alt="1" src="https://github.com/omernyr/NineWest/assets/89137487/2dbec330-fb13-4ef8-943d-389a1bd8ea99"> <img width="163" alt="2" src="https://github.com/omernyr/NineWest/assets/89137487/9714f4bc-c567-4d72-a9ba-58174c22ee7d"> 
 
 ## Installation
 
